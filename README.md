@@ -21,7 +21,8 @@ https://resetstore-bug-khorpkwmii.now.sh
   * resetStore started
   * resetStore finished
   * resetStore started
-5. Login again. The `Store reset while query was in flight(not completed in link chain)` error will be thrown.
+4. Login again. The `Store reset while query was in flight(not completed in link chain)` error will be thrown.
+5. You can try reloading the page and then restart the process, now logged in. The same behaviour will be seen.
 
 # Considerations
 
