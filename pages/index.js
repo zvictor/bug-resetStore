@@ -4,7 +4,7 @@ import gql from "graphql-tag"
 import { withApollo, compose, Query } from 'react-apollo'
 
 import withData from '../lib/withData'
-import checkLoggedIn from '../lib/checkLoggedIn'
+import MeBox from '../components/MeBox'
 import SigninBox from '../components/SigninBox'
 import Link from 'next/link'
 
@@ -30,20 +30,7 @@ const signout = props => {
 
 const Index = props => (
   <>
-    <Query query={GET_USER}>
-      {({ loading, error, data }) => {
-        if (!data.user) {
-          return null
-        }
-
-        return (
-          <>
-          Hello {data.user.name}!<br />
-          <button onClick={() => signout(props)}>Sign out</button>
-        </>
-        )
-      }}
-    </Query>
+    <MeBox client={props.client} />
     <hr />
     <SigninBox client={props.client} />
     <hr />

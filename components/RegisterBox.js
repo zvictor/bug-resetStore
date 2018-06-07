@@ -17,7 +17,6 @@ const RegisterBox = (props) => {
   let name, email, password
 
   return (
-    // <Mutation mutation={CREATE_USER} refetchQueries={['getUser']} onCompleted={(data) => {
     <Mutation mutation={CREATE_USER} onCompleted={(data) => {
       // Store the token in cookie
       document.cookie = cookie.serialize('token', data.signinUser.token, {
@@ -31,7 +30,7 @@ const RegisterBox = (props) => {
       })
     }} onError={(error) => {
       // If you want to send error to external service?
-      console.log(error)
+      console.error(error)
     }}>
       {(create, { data, error }) => (
         <div>

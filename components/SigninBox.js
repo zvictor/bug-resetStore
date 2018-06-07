@@ -29,10 +29,11 @@ const SigninBox = (props) => {
       })
     }} onError={(error) => {
       // If you want to send error to external service?
-      console.log(error)
+      console.error(error)
     }}>
       {(signinUser, { data, error }) => (
         <div>
+          <h1>Sign in</h1>
           <form onSubmit={e => {
             e.preventDefault()
             e.stopPropagation()
